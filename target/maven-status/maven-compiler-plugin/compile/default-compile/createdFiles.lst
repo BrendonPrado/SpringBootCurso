@@ -1,2 +1,5 @@
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Categoria.class
+br/com/gsw/springBootCurso/SpringBootCurso/repositories/CategoriaRepositories.class
+br/com/gsw/springBootCurso/SpringBootCurso/resource/CategoriaResource.class
 br/com/gsw/springBootCurso/SpringBootCurso/SpringBootCursoApplication.class
+br/com/gsw/springBootCurso/SpringBootCurso/service/CategoriaService.class
