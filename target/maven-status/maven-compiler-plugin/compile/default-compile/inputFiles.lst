@@ -1,5 +1,7 @@
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/repositories/CategoriaRepositories.java
+/home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/repositories/ProdutoRepositories.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/resource/CategoriaResource.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/domain/Categoria.java
+/home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/domain/Produto.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/service/CategoriaService.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/SpringBootCursoApplication.java
