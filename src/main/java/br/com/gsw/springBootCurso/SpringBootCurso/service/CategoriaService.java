@@ -22,4 +22,9 @@ public class CategoriaService {
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontado do id :"+id+", Categoria: "+Categoria.class));
 	}
 	
+	public Categoria insert(Categoria obj) {
+		obj.setId(null);
+		return repo.save(obj);
+	}
+	
 }
