@@ -1,5 +1,6 @@
 package br.com.gsw.springBootCurso.SpringBootCurso.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.Categoria;
+import br.com.gsw.springBootCurso.SpringBootCurso.dto.CategoriaDTO;
 import br.com.gsw.springBootCurso.SpringBootCurso.repositories.CategoriaRepositories;
 import br.com.gsw.springBootCurso.SpringBootCurso.service.exceptions.DataIntegrityException;
 import br.com.gsw.springBootCurso.SpringBootCurso.service.exceptions.ObjectNotFoundException;
@@ -40,6 +42,10 @@ public class CategoriaService {
 		}catch (DataIntegrityViolationException e) {
 			throw new DataIntegrityException("Não foi possível deletar está categoria pois possui um ou mais produtos");
 		}
+	}
+
+	public List<Categoria> findAll() {
+		return repo.findAll();
 	}
 	
 }

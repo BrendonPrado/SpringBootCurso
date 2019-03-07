@@ -11,6 +11,7 @@ br/com/gsw/springBootCurso/SpringBootCurso/service/exceptions/ObjectNotFoundExce
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Endereco.class
 br/com/gsw/springBootCurso/SpringBootCurso/resource/PedidoResource.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/ClienteService.class
+br/com/gsw/springBootCurso/SpringBootCurso/dto/CategoriaDTO.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/PedidoRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/enums/TipoCliente.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/CategoriaService.class

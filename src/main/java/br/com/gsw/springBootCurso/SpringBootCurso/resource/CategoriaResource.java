@@ -3,6 +3,8 @@ package br.com.gsw.springBootCurso.SpringBootCurso.resource;
 
 
 import java.net.URI;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.Categoria;
+import br.com.gsw.springBootCurso.SpringBootCurso.dto.CategoriaDTO;
 import br.com.gsw.springBootCurso.SpringBootCurso.service.CategoriaService;
 
 @RestController
@@ -22,6 +25,12 @@ public class CategoriaResource {
 
 	@Autowired
 	private CategoriaService service;
+	
+	@RequestMapping(method=RequestMethod.GET)
+	public ResponseEntity<List<CategoriaDTO>> findAll(){
+		List<CategoriaDTO> list = service.findAll().stream().map(cat -> new CategoriaDTO(cat)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(list);
+	}
 	
 	@RequestMapping(value="/{id}",method = RequestMethod.GET)
 		public ResponseEntity<Categoria> find(@PathVariable Integer id){
