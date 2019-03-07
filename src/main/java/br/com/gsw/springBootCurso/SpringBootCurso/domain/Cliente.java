@@ -1,7 +1,9 @@
 package br.com.gsw.springBootCurso.SpringBootCurso.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CollectionTable;
@@ -12,6 +14,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.TipoCliente;
@@ -32,14 +36,16 @@ public class Cliente implements Serializable{
 	private String cpfOuCnpj;
 	private Integer tipoCliente;
 
-	@JsonManagedReference
 	@ElementCollection
 	@CollectionTable(name="Telefone")
 	private Set<String> tels = new HashSet<>();
 	
-	@JsonManagedReference
 	@OneToMany(mappedBy="cliente")
 	private Set<Endereco> enderecos = new HashSet<>();
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="cliente")
+	private List<Pedido> pedidos = new ArrayList<>();
 	
 	public Cliente(Integer id, String nome, String email, String cpfOuCnpj, TipoCliente tipoCliente) {
 		super();
@@ -137,6 +143,16 @@ public class Cliente implements Serializable{
 
 	public Cliente() {
 		super();
+	}
+
+
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
 	}
 	
 	
