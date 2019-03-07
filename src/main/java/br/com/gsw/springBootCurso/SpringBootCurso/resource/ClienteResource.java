@@ -1,6 +1,5 @@
 package br.com.gsw.springBootCurso.SpringBootCurso.resource;
 
-import javax.persistence.Entity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +21,7 @@ public class ClienteResource {
 	
 	@RequestMapping(value="/{id}",method = RequestMethod.GET)
 	public ResponseEntity<Cliente> find(@PathVariable Integer id){
-		Cliente cli = clienteService.buscar(id);
+		Cliente cli = clienteService.find(id);
 		return ResponseEntity.ok().body(cli);
 	}
 	

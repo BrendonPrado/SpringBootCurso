@@ -6,6 +6,7 @@ br/com/gsw/springBootCurso/SpringBootCurso/domain/ItemPedidoPK.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Categoria.class
 br/com/gsw/springBootCurso/SpringBootCurso/resource/ClienteResource.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Telefone.class
+br/com/gsw/springBootCurso/SpringBootCurso/service/exceptions/DataIntegrityException.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/exceptions/ObjectNotFoundException.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Endereco.class
 br/com/gsw/springBootCurso/SpringBootCurso/resource/PedidoResource.class
