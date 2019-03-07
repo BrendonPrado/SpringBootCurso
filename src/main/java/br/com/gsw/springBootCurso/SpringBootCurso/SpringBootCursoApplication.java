@@ -73,6 +73,12 @@ public class SpringBootCursoApplication  implements CommandLineRunner{
 		
 		Categoria cat1 = new Categoria(null, "Informatica");
 		Categoria cat2 = new Categoria(null,"Escritorio");
+		Categoria cat3 = new Categoria(null, "Remedios");
+		Categoria cat4 = new Categoria(null,"Casa Mesa e Bug");
+		Categoria cat5 = new Categoria(null, "Jogos");
+		Categoria cat6 = new Categoria(null,"Mobilias");
+		Categoria cat7 = new Categoria(null, "eletronicos");
+		Categoria cat8 = new Categoria(null,"eletros");
 		
 		Produto p1 = new Produto(null,"computador", 2000.0);
 		Produto p2 = new Produto(null,"Impressora", 800.0);
@@ -137,7 +143,7 @@ public class SpringBootCursoApplication  implements CommandLineRunner{
 		p2.getItens().addAll(Arrays.asList(ip3));	
 		p3.getItens().addAll(Arrays.asList(ip2));
 		
-		categoriaRepo.saveAll(Arrays.asList(cat1,cat2));
+		categoriaRepo.saveAll(Arrays.asList(cat1,cat2,cat3,cat4,cat5,cat6,cat7,cat8));
 		produtoRepositories.saveAll(Arrays.asList(p1,p2,p3));
 		
 		estadoRepositories.saveAll(Arrays.asList(e1,e2));
