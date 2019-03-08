@@ -1,6 +1,4 @@
-package br.com.gsw.springBootCurso.SpringBootCurso.dto;
-
-import br.com.gsw.springBootCurso.SpringBootCurso.service.validation.ClienteInsertValidator;
+package br.com.gsw.springBootCurso.SpringBootCurso.service.validation;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

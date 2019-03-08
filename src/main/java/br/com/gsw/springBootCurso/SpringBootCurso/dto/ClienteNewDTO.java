@@ -1,5 +1,6 @@
 package br.com.gsw.springBootCurso.SpringBootCurso.dto;
 
+import br.com.gsw.springBootCurso.SpringBootCurso.service.validation.ClienteInsert;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Email;

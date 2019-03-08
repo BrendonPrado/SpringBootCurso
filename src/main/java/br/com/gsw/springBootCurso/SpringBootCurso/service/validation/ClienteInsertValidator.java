@@ -1,7 +1,6 @@
 package br.com.gsw.springBootCurso.SpringBootCurso.service.validation;
 
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.TipoCliente;
-import br.com.gsw.springBootCurso.SpringBootCurso.dto.ClienteInsert;
 import br.com.gsw.springBootCurso.SpringBootCurso.dto.ClienteNewDTO;
 import br.com.gsw.springBootCurso.SpringBootCurso.repositories.ClienteRepositories;
 import br.com.gsw.springBootCurso.SpringBootCurso.resource.exceptions.FieldMessage;
