@@ -1,7 +1,13 @@
 package br.com.gsw.springBootCurso.SpringBootCurso.dto;
 
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
+@ClienteInsert
 public class ClienteNewDTO implements Serializable {
 
 
@@ -10,21 +16,40 @@ public class ClienteNewDTO implements Serializable {
      */
     private static final long serialVersionUID = 1L;
     //Cliente
+    @NotEmpty(message = "Preenchimento Obrigatorio")
+    @Length(min=5,max=80,message="O campo deve ter entre 5 a 80 caracteres")
     private String nome;
+
+    @NotEmpty(message = "Preenchimento Obrigatorio")
+    @Email(message="Email inválido")
     private String email;
+
+    @NotEmpty(message = "Preenchimento Obrigatorio")
     private String cpfOuCnpj;
+
+    @NotNull(message = "Preenchimento Obrigatorio")
     private Integer tipoCliente;
 
+
     //Endereco
+
+    @NotEmpty(message = "Preenchimento Obrigatorio")
     private String logradouro;
+
+    @NotEmpty(message = "Preenchimento Obrigatorio")
     private String numero;
     private String complemento;
     private String bairro;
+
+    @NotEmpty(message = "Preenchimento Obrigatorio")
     private String cep;
     //Cidade
+    @NotNull(message = "Preenchimento Obrigatorio")
     private Integer cidadeId;
 
     //Telefone
+
+    @NotEmpty(message = "Preenchimento Obrigatorio")
     private String telefone1;
     private String telefone2;
     private String telefone3;

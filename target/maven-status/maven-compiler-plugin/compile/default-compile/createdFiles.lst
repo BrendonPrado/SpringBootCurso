@@ -24,12 +24,15 @@ br/com/gsw/springBootCurso/SpringBootCurso/domain/ItemPedido.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Cliente.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/CategoriaRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Produto.class
+br/com/gsw/springBootCurso/SpringBootCurso/service/validation/ClienteInsertValidator.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/EnderecoRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/PagamentoRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/resource/exceptions/ResourceExceptionHandler.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/PedidoService.class
 br/com/gsw/springBootCurso/SpringBootCurso/SpringBootCursoApplication.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/ClienteRepositories.class
+br/com/gsw/springBootCurso/SpringBootCurso/service/validation/utils/BR.class
+br/com/gsw/springBootCurso/SpringBootCurso/dto/ClienteInsert.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Cidade.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/ItemPedidoRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/ProdutoRepositories.class

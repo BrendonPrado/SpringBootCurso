@@ -18,7 +18,6 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -85,7 +84,14 @@ public class ClienteService {
 		Endereco end = new Endereco(null,obj.getLogradouro(),obj.getNumero(),obj.getComplemento(),obj.getBairro(),obj.getCep(),cidade,cliente );
 
 		cliente.getEnderecos().add(end);
-		cliente.getTels().addAll( Arrays.asList(obj.getTelefone1(),obj.getTelefone2(),obj.getTelefone3() ));
+		cliente.getTels().add(obj.getTelefone1());
+		if(obj.getTelefone2() != null){
+			cliente.getTels().add( obj.getTelefone2() );
+		}
+
+		if(obj.getTelefone3() != null){
+			cliente.getTels().add( obj.getTelefone3() );
+		}
 		return cliente;
 	}
 }
