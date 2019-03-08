@@ -1,15 +1,7 @@
 package br.com.gsw.springBootCurso.SpringBootCurso.domain;
 
+import javax.persistence.*;
 import java.io.Serializable;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
 @Entity
@@ -37,10 +29,11 @@ public class Cidade  implements Serializable{
 		this.nome = nome;
 	}
 
-	public Cidade(Integer id, String nome) {
+	public Cidade(Integer id, String nome,Estado estado) {
 		super();
 		this.id = id;
 		this.nome = nome;
+		this.estado = estado;
 	}
 
 	@Override
@@ -49,6 +42,12 @@ public class Cidade  implements Serializable{
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
+	}
+
+	public Cidade(Integer id, String nome) {
+		super();
+		this.id = id;
+		this.nome = nome;
 	}
 
 	@Override
@@ -79,7 +78,8 @@ public class Cidade  implements Serializable{
 	public Cidade() {
 		super();
 	}
-	
 
-	
+	public void setId(Integer id) {
+		this.id = id;
+	}
 }

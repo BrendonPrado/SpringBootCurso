@@ -1,8 +1,10 @@
 package br.com.gsw.springBootCurso.SpringBootCurso.service;
 
-import java.util.List;
-import java.util.Optional;
-
+import br.com.gsw.springBootCurso.SpringBootCurso.domain.Categoria;
+import br.com.gsw.springBootCurso.SpringBootCurso.dto.CategoriaDTO;
+import br.com.gsw.springBootCurso.SpringBootCurso.repositories.CategoriaRepositories;
+import br.com.gsw.springBootCurso.SpringBootCurso.service.exceptions.DataIntegrityException;
+import br.com.gsw.springBootCurso.SpringBootCurso.service.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -10,19 +12,16 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.Categoria;
-import br.com.gsw.springBootCurso.SpringBootCurso.dto.CategoriaDTO;
-import br.com.gsw.springBootCurso.SpringBootCurso.repositories.CategoriaRepositories;
-import br.com.gsw.springBootCurso.SpringBootCurso.service.exceptions.DataIntegrityException;
-import br.com.gsw.springBootCurso.SpringBootCurso.service.exceptions.ObjectNotFoundException;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoriaService {
 	
 	@Autowired
 	private CategoriaRepositories repo;
-	
-	
+
+
 	public Categoria find(Integer id) throws ObjectNotFoundException {
 		Optional<Categoria> obj = repo.findById(id);
 		
@@ -66,5 +65,7 @@ public class CategoriaService {
 	public Categoria fromDto(CategoriaDTO obj) {
 		return new Categoria(obj.getId(), obj.getNome());
 	}
+
+
 	
 }

@@ -1,15 +1,9 @@
 package br.com.gsw.springBootCurso.SpringBootCurso.domain;
 
-import java.io.Serializable;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 public class Endereco implements Serializable{
@@ -88,6 +82,8 @@ public class Endereco implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+
 	public Endereco(Integer id, String logradouro, String numero, String complemento, String bairro, String cep,
 			Cidade cidade, Cliente cliente) {
 		super();

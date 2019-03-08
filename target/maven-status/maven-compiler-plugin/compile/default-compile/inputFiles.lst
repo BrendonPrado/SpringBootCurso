@@ -18,6 +18,7 @@
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/SpringBootCursoApplication.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/domain/PagamentoComCartao.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/dto/ClienteDTO.java
+/home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/dto/ClienteNewDTO.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/domain/Pagamento.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/repositories/CategoriaRepositories.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/repositories/ProdutoRepositories.java
