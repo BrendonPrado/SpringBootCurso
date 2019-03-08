@@ -55,5 +55,9 @@ public class CategoriaService {
 		PageRequest pageRequest = PageRequest.of(page, linePerPage,Direction.valueOf(direction), orderBy);
 		return repo.findAll(pageRequest);
 	}
+
+	public Categoria fromDto(CategoriaDTO obj) {
+		return new Categoria(obj.getId(), obj.getNome());
+	}
 	
 }
