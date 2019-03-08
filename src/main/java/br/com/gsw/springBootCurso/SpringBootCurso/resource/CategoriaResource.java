@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.validation.Valid;
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
@@ -49,7 +47,7 @@ public class CategoriaResource {
 	}
 	
 	@RequestMapping(value="/{id}",method = RequestMethod.PUT )
-	public ResponseEntity<Void> update(@RequestBody Categoria obj, @PathVariable Integer id){
+	public ResponseEntity<Void> update(@RequestBody CategoriaDTO obj, @PathVariable Integer id){
 		
 		obj.setId(id);
 		service.update(obj);
