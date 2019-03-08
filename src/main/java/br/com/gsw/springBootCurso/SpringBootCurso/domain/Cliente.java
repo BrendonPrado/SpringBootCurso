@@ -30,7 +30,7 @@ public class Cliente implements Serializable{
 	@CollectionTable(name="Telefone")
 	private Set<String> tels = new HashSet<>();
 	
-	@OneToMany(mappedBy="cliente")
+	@OneToMany(mappedBy="cliente",cascade = CascadeType.ALL)
 	private Set<Endereco> enderecos = new HashSet<>();
 	
 	@JsonIgnore
