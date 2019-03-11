@@ -14,6 +14,7 @@ br/com/gsw/springBootCurso/SpringBootCurso/dto/ClienteDTO.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/PedidoRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/CategoriaService.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/PagamentoComCartao.class
+br/com/gsw/springBootCurso/SpringBootCurso/conf/JacksonConfig$1.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/ItemPedido.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Cliente.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/CategoriaRepositories.class
@@ -30,7 +31,9 @@ br/com/gsw/springBootCurso/SpringBootCurso/domain/PagamentoComBoleto.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/ItemPedidoPK.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Categoria.class
 br/com/gsw/springBootCurso/SpringBootCurso/resource/ClienteResource.class
+br/com/gsw/springBootCurso/SpringBootCurso/service/BoletoService.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/exceptions/DataIntegrityException.class
+br/com/gsw/springBootCurso/SpringBootCurso/conf/JacksonConfig.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/ProdutoService.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/enums/TipoCliente.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/validation/ClienteUpdate.class

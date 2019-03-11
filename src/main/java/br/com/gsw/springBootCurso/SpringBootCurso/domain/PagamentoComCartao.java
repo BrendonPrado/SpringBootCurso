@@ -1,10 +1,12 @@
 package br.com.gsw.springBootCurso.SpringBootCurso.domain;
 
+import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.EstadoPagamento;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 import javax.persistence.Entity;
 
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.EstadoPagamento;
-
 @Entity
+@JsonTypeName("pagamentoComCartao")
 public class PagamentoComCartao extends Pagamento{
 	/**
 	 * 
@@ -27,6 +29,7 @@ public class PagamentoComCartao extends Pagamento{
 
 	public PagamentoComCartao() {
 	}
+
 
 	
 	

@@ -1,16 +1,16 @@
 package br.com.gsw.springBootCurso.SpringBootCurso.domain;
 
-import java.util.Date;
+import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.EstadoPagamento;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.EstadoPagamento;
+import java.util.Date;
 
 @Entity
+@JsonTypeName("pagamentoComBoleto")
 public class PagamentoComBoleto extends Pagamento{
 	/**
 	 * 
