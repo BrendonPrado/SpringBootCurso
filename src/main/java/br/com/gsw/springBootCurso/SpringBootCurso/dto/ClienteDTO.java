@@ -52,8 +52,8 @@ public class ClienteDTO implements Serializable{
 	}
 
 	public ClienteDTO(Integer id,
-			@NotEmpty(message = "O campo não pode ser vazio") @Length(min = 5, max = 80, message = "O campo deve ter entre 5 a 80 caracteres") String nome,
-			@NotEmpty(message = "O campo não pode ser vazio") @Email(message = "Email inválido") String email) {
+					  @NotEmpty(message = "O campo não pode ser vazio") @Length(min = 5, max = 80, message = "O campo deve ter entre 5 a 80 caracteres") String nome,
+					  @NotEmpty(message = "O campo não pode ser vazio") @Email(message = "Email inválido") String email) {
 		super();
 		this.id = id;
 		this.nome = nome;

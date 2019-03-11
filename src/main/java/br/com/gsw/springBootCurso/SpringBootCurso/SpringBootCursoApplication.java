@@ -1,36 +1,16 @@
 package br.com.gsw.springBootCurso.SpringBootCurso;
 
-import java.lang.reflect.Array;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
+import br.com.gsw.springBootCurso.SpringBootCurso.domain.*;
+import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.EstadoPagamento;
+import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.TipoCliente;
+import br.com.gsw.springBootCurso.SpringBootCurso.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.Categoria;
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.Cidade;
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.Cliente;
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.Endereco;
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.Estado;
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.ItemPedido;
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.Pagamento;
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.PagamentoComBoleto;
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.PagamentoComCartao;
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.Pedido;
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.Produto;
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.Telefone;
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.EstadoPagamento;
-import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.TipoCliente;
-import br.com.gsw.springBootCurso.SpringBootCurso.repositories.CategoriaRepositories;
-import br.com.gsw.springBootCurso.SpringBootCurso.repositories.CidadeRepositories;
-import br.com.gsw.springBootCurso.SpringBootCurso.repositories.ClienteRepositories;
-import br.com.gsw.springBootCurso.SpringBootCurso.repositories.EnderecoRepositories;
-import br.com.gsw.springBootCurso.SpringBootCurso.repositories.EstadoRepositories;
-import br.com.gsw.springBootCurso.SpringBootCurso.repositories.ItemPedidoRepositories;
-import br.com.gsw.springBootCurso.SpringBootCurso.repositories.PagamentoRepositories;
-import br.com.gsw.springBootCurso.SpringBootCurso.repositories.PedidoRepositories;
-import br.com.gsw.springBootCurso.SpringBootCurso.repositories.ProdutoRepositories;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
 
 @SpringBootApplication
 public class SpringBootCursoApplication  implements CommandLineRunner{
@@ -73,24 +53,43 @@ public class SpringBootCursoApplication  implements CommandLineRunner{
 		
 		Categoria cat1 = new Categoria(null, "Informatica");
 		Categoria cat2 = new Categoria(null,"Escritorio");
-		Categoria cat3 = new Categoria(null, "Remedios");
-		Categoria cat4 = new Categoria(null,"Casa Mesa e Bug");
-		Categoria cat5 = new Categoria(null, "Jogos");
-		Categoria cat6 = new Categoria(null,"Mobilias");
-		Categoria cat7 = new Categoria(null, "eletronicos");
-		Categoria cat8 = new Categoria(null,"eletros");
-		
+		Categoria cat3 = new Categoria(null, "Casa Mesa e Bug");
+		Categoria cat4 = new Categoria(null,"Eletronicos");
+		Categoria cat5 = new Categoria(null, "Jardinagem");
+		Categoria cat6 = new Categoria(null,"Decoração");
+		Categoria cat7 = new Categoria(null, "Perfumaria");
+
 		Produto p1 = new Produto(null,"computador", 2000.0);
 		Produto p2 = new Produto(null,"Impressora", 800.0);
 		Produto p3 = new Produto(null,"Mouse", 80.0);
-		
+		Produto p4 = new Produto( null,"Mesa de escritorio",300.0 );
+		Produto p5 = new Produto( null , "Toalha",50.0);
+		Produto p6 = new Produto( null,"Colcha", 200.0 );
+		Produto p7 = new Produto( null ,"TV",1200.0);
+		Produto p8 = new Produto( null ,"Roçadeira",800.0);
+		Produto p9 = new Produto( null,"Abajour",100.0);
+		Produto p10 = new Produto( null,"Pendente",180.0);
+		Produto p11 = new Produto( null,"Shampoo",90);
+
 		cat1.getProdutos().addAll(Arrays.asList(p1,p2,p3));
-		cat2.getProdutos().addAll(Arrays.asList(p2));
+		cat2.getProdutos().addAll(Arrays.asList(p2,p4));
+		cat3.getProdutos().addAll(Arrays.asList(p5,p6));
+		cat4.getProdutos().addAll(Arrays.asList(p1,p2,p3,p7));
+		cat5.getProdutos().addAll(Arrays.asList(p8));
+		cat6.getProdutos().addAll(Arrays.asList(p9,p10));
+		cat7.getProdutos().addAll(Arrays.asList(p11));
 		
-		p1.getCategorias().add(cat1);
+		p1.getCategorias().addAll(Arrays.asList(cat1,cat4));
 		p2.getCategorias().addAll(Arrays.asList(cat1,cat2));
 		p3.getCategorias().addAll(Arrays.asList(cat1));
-		
+		p4.getCategorias().addAll(Arrays.asList(cat2));
+		p5.getCategorias().addAll(Arrays.asList(cat3));
+		p6.getCategorias().addAll(Arrays.asList(cat3));
+		p7.getCategorias().addAll(Arrays.asList(cat4));
+		p8.getCategorias().addAll(Arrays.asList(cat5));
+		p9.getCategorias().addAll(Arrays.asList(cat6));
+		p10.getCategorias().addAll(Arrays.asList(cat6));
+		p11.getCategorias().addAll(Arrays.asList(cat7));
 		
 		Cidade c1 = new Cidade(null, "Uberlândia");
 		Cidade c2 = new Cidade(null,"São Paulo");
@@ -143,8 +142,8 @@ public class SpringBootCursoApplication  implements CommandLineRunner{
 		p2.getItens().addAll(Arrays.asList(ip3));	
 		p3.getItens().addAll(Arrays.asList(ip2));
 		
-		categoriaRepo.saveAll(Arrays.asList(cat1,cat2,cat3,cat4,cat5,cat6,cat7,cat8));
-		produtoRepositories.saveAll(Arrays.asList(p1,p2,p3));
+		categoriaRepo.saveAll(Arrays.asList(cat1,cat2,cat3,cat4,cat5,cat6,cat7));
+		produtoRepositories.saveAll(Arrays.asList(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11));
 		
 		estadoRepositories.saveAll(Arrays.asList(e1,e2));
 		cidadeRepositories.saveAll(Arrays.asList(c1,c2,c3));
