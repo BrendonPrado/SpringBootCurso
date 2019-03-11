@@ -32,6 +32,6 @@ public class ProdutoService {
     public Page<Produto> findPage(String nome, List<Integer> ids, Integer page, Integer linePerPage, String orderBy, String direction){
         PageRequest pageRequest = PageRequest.of(page, linePerPage, Sort.Direction.valueOf(direction), orderBy);
         List<Categoria> categorias = categoriaRepositories.findAllById( ids );
-        return repo.search(nome,categorias,pageRequest);
+        return repo.findByNomeContainingAndAndCategoriasIn(nome,categorias,pageRequest);
     }
 }

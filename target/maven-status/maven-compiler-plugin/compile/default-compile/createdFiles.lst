@@ -1,6 +1,8 @@
+br/com/gsw/springBootCurso/SpringBootCurso/resource/utils/URL.class
 br/com/gsw/springBootCurso/SpringBootCurso/resource/CategoriaResource.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Pagamento.class
 br/com/gsw/springBootCurso/SpringBootCurso/resource/exceptions/StandardError.class
+br/com/gsw/springBootCurso/SpringBootCurso/dto/ProdutoDTO.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Telefone.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/exceptions/ObjectNotFoundException.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Endereco.class
@@ -20,6 +22,7 @@ br/com/gsw/springBootCurso/SpringBootCurso/resource/exceptions/ResourceException
 br/com/gsw/springBootCurso/SpringBootCurso/service/PedidoService.class
 br/com/gsw/springBootCurso/SpringBootCurso/SpringBootCursoApplication.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/validation/utils/BR.class
+br/com/gsw/springBootCurso/SpringBootCurso/resource/ProdutoResource.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/ProdutoRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/CidadeRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/dto/ClienteNewDTO.class
@@ -28,6 +31,7 @@ br/com/gsw/springBootCurso/SpringBootCurso/domain/ItemPedidoPK.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Categoria.class
 br/com/gsw/springBootCurso/SpringBootCurso/resource/ClienteResource.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/exceptions/DataIntegrityException.class
+br/com/gsw/springBootCurso/SpringBootCurso/service/ProdutoService.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/enums/TipoCliente.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/validation/ClienteUpdate.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/EstadoRepositories.class

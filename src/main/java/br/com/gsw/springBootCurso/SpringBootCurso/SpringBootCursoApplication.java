@@ -85,7 +85,7 @@ public class SpringBootCursoApplication  implements CommandLineRunner{
 		p4.getCategorias().addAll(Arrays.asList(cat2));
 		p5.getCategorias().addAll(Arrays.asList(cat3));
 		p6.getCategorias().addAll(Arrays.asList(cat3));
-		p7.getCategorias().addAll(Arrays.asList(cat4));
+		p7.getCategorias().addAll(Arrays.asList(cat4,cat1));
 		p8.getCategorias().addAll(Arrays.asList(cat5));
 		p9.getCategorias().addAll(Arrays.asList(cat6));
 		p10.getCategorias().addAll(Arrays.asList(cat6));
