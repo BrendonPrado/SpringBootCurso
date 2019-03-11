@@ -1,11 +1,10 @@
 package br.com.gsw.springBootCurso.SpringBootCurso.domain;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
 
 
 @Entity
@@ -75,6 +74,9 @@ public class ItemPedido implements Serializable{
 	}
 
 
+	public double getSubTotal(){
+		return (preco-desconto)*quantidade;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;

@@ -92,6 +92,14 @@ public class Pedido implements Serializable{
 		return endereco;
 	}
 
+	public double getValorTotal(){
+		double soma = 0;
+		for(ItemPedido valor: itens){
+			soma += valor.getSubTotal();
+		}
+		return soma;
+	}
+
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
