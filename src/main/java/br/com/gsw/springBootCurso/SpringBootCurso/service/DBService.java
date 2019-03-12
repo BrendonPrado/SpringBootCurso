@@ -98,7 +98,7 @@ public class DBService {
         e2.getCidades().addAll(Arrays.asList(c2,c3));
 
 
-        Cliente cl1 = new Cliente(null, "Maria Silva", "maria@gmail.com","621461461", TipoCliente.PESSOAFISICA);
+        Cliente cl1 = new Cliente(null, "Maria Silva", "jonathas.moraes@gsw.com.br","621461461", TipoCliente.PESSOAFISICA);
 
         Endereco end1 = new Endereco(null, "Rua Flores", "300", "apto 203", "Jardim", "297187178781", c1, cl1);
         Endereco end2 = new Endereco(null, "Avenida Matos", "105", "sala 800", "Centro", "917929127", c2, cl1);

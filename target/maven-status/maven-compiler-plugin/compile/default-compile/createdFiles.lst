@@ -1,4 +1,5 @@
 br/com/gsw/springBootCurso/SpringBootCurso/resource/utils/URL.class
+br/com/gsw/springBootCurso/SpringBootCurso/service/MockEmailService.class
 br/com/gsw/springBootCurso/SpringBootCurso/resource/CategoriaResource.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Pagamento.class
 br/com/gsw/springBootCurso/SpringBootCurso/resource/exceptions/StandardError.class
@@ -28,10 +29,12 @@ br/com/gsw/springBootCurso/SpringBootCurso/resource/ProdutoResource.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/ProdutoRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/CidadeRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/dto/ClienteNewDTO.class
+br/com/gsw/springBootCurso/SpringBootCurso/service/SmtpEmailService.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/PagamentoComBoleto.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/ItemPedidoPK.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/DBService.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Categoria.class
+br/com/gsw/springBootCurso/SpringBootCurso/service/AbstractEmailService.class
 br/com/gsw/springBootCurso/SpringBootCurso/resource/ClienteResource.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/BoletoService.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/exceptions/DataIntegrityException.class
@@ -42,6 +45,7 @@ br/com/gsw/springBootCurso/SpringBootCurso/service/validation/ClienteUpdate.clas
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/EstadoRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Pedido.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/validation/ClienteInsertValidator.class
+br/com/gsw/springBootCurso/SpringBootCurso/service/EmailService.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/EnderecoRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/validation/ClienteUpdateValidator.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/PagamentoRepositories.class

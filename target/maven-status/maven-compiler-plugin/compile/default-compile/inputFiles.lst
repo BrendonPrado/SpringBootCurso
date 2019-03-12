@@ -31,6 +31,7 @@
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/domain/PagamentoComBoleto.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/repositories/PedidoRepositories.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/dto/ProdutoDTO.java
+/home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/service/EmailService.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/resource/ProdutoResource.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/service/ProdutoService.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/service/BoletoService.java
@@ -41,14 +42,17 @@
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/domain/Pedido.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/domain/PagamentoComCartao.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/conf/JacksonConfig.java
+/home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/service/MockEmailService.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/dto/ClienteDTO.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/dto/ClienteNewDTO.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/domain/Pagamento.java
+/home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/service/AbstractEmailService.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/repositories/ProdutoRepositories.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/service/validation/ClienteInsertValidator.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/service/CategoriaService.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/repositories/CidadeRepositories.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/service/ClienteService.java
+/home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/service/SmtpEmailService.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/domain/ItemPedidoPK.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/service/validation/ClienteUpdateValidator.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/service/validation/ClienteInsert.java
