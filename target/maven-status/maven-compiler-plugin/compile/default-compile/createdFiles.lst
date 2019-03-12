@@ -12,6 +12,7 @@ br/com/gsw/springBootCurso/SpringBootCurso/service/ClienteService.class
 br/com/gsw/springBootCurso/SpringBootCurso/dto/CategoriaDTO.class
 br/com/gsw/springBootCurso/SpringBootCurso/dto/ClienteDTO.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/PedidoRepositories.class
+br/com/gsw/springBootCurso/SpringBootCurso/conf/DevConfig.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/CategoriaService.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/PagamentoComCartao.class
 br/com/gsw/springBootCurso/SpringBootCurso/conf/JacksonConfig$1.class

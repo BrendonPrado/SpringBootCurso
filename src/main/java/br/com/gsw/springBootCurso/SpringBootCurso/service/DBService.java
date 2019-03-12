@@ -134,6 +134,7 @@ public class DBService {
         p2.getItens().addAll(Arrays.asList(ip3));
         p3.getItens().addAll(Arrays.asList(ip2));
 
+
         categoriaRepo.saveAll(Arrays.asList(cat1,cat2,cat3,cat4,cat5,cat6,cat7));
         produtoRepositories.saveAll(Arrays.asList(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11));
 

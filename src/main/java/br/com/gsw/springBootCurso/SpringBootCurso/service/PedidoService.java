@@ -5,6 +5,7 @@ import br.com.gsw.springBootCurso.SpringBootCurso.domain.ItemPedido;
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.PagamentoComBoleto;
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.Pedido;
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.EstadoPagamento;
+import br.com.gsw.springBootCurso.SpringBootCurso.repositories.ClienteRepositories;
 import br.com.gsw.springBootCurso.SpringBootCurso.repositories.ItemPedidoRepositories;
 import br.com.gsw.springBootCurso.SpringBootCurso.repositories.PagamentoRepositories;
 import br.com.gsw.springBootCurso.SpringBootCurso.repositories.PedidoRepositories;
@@ -31,6 +32,10 @@ public class PedidoService {
 	@Autowired
 	ItemPedidoRepositories itemPedidoRepositories;
 
+	@Autowired
+	ClienteRepositories clienteRepositories;
+
+
 	public Pedido find(Integer id) throws ObjectNotFoundException {
 		Optional<Pedido> obj = repo.findById(id);
 		
@@ -40,6 +45,7 @@ public class PedidoService {
     public Pedido insert(Pedido pedido) {
     	pedido.setId( null );
     	pedido.setInstante( new Date(  ) );
+    	pedido.setCliente( clienteRepositories.findById( pedido.getCliente().getId() ).orElse( null ) );
     	pedido.getPagamento().setEstadoPagamento( EstadoPagamento.PENDENTE );
     	pedido.getPagamento().setPedido( pedido );
     	if(pedido.getPagamento() instanceof PagamentoComBoleto){
@@ -52,8 +58,8 @@ public class PedidoService {
 		System.out.println(pedido.getPagamento().getEstadoPagamento().getDescricao());
     	for(ItemPedido ip:pedido.getItens()){
     		ip.setDesconto(0.0);
-			System.out.println(ip.getProduto().getId());
-    		ip.setPreco( produtoService.find( ip.getProduto().getId() ).getPreco() );
+    		ip.setProduto( produtoService.find( ip.getProduto().getId() ) );
+    		ip.setPreco( ip.getProduto().getPreco());
     		ip.setPedido(pedido);
 		}
     	itemPedidoRepositories.saveAll( pedido.getItens() );

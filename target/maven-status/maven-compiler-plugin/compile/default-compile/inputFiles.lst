@@ -9,6 +9,7 @@
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/repositories/EnderecoRepositories.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/repositories/EstadoRepositories.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/resource/PedidoResource.java
+/home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/conf/DevConfig.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/service/exceptions/ObjectNotFoundException.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/domain/enums/EstadoPagamento.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/conf/TestConfig.java
