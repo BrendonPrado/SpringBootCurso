@@ -3,6 +3,7 @@ br/com/gsw/springBootCurso/SpringBootCurso/service/MockEmailService.class
 br/com/gsw/springBootCurso/SpringBootCurso/resource/CategoriaResource.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Pagamento.class
 br/com/gsw/springBootCurso/SpringBootCurso/resource/exceptions/StandardError.class
+br/com/gsw/springBootCurso/SpringBootCurso/conf/SecurityConfig.class
 br/com/gsw/springBootCurso/SpringBootCurso/dto/ProdutoDTO.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Telefone.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/exceptions/ObjectNotFoundException.class

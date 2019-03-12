@@ -21,6 +21,7 @@
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/domain/Produto.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/domain/enums/TipoCliente.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/domain/Cidade.java
+/home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/conf/SecurityConfig.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/resource/utils/URL.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/service/validation/utils/BR.java
 /home/brendon/Downloads/SpringBootCurso/src/main/java/br/com/gsw/springBootCurso/SpringBootCurso/resource/exceptions/FieldMessage.java
