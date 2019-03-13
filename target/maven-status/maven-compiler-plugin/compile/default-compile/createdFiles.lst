@@ -52,6 +52,7 @@ br/com/gsw/springBootCurso/SpringBootCurso/service/validation/ClienteUpdateValid
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/PagamentoRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/ClienteRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/conf/TestConfig.class
+br/com/gsw/springBootCurso/SpringBootCurso/domain/enums/Perfil.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Cidade.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/ItemPedidoRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/enums/EstadoPagamento.class

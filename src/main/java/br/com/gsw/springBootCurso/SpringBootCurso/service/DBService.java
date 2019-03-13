@@ -2,9 +2,11 @@ package br.com.gsw.springBootCurso.SpringBootCurso.service;
 
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.*;
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.EstadoPagamento;
+import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.Perfil;
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.TipoCliente;
 import br.com.gsw.springBootCurso.SpringBootCurso.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
@@ -22,6 +24,9 @@ public class DBService {
 
     @Autowired
     CidadeRepositories cidadeRepositories;
+
+    @Autowired
+    BCryptPasswordEncoder encoder;
 
     @Autowired
     EstadoRepositories estadoRepositories;
@@ -98,7 +103,9 @@ public class DBService {
         e2.getCidades().addAll(Arrays.asList(c2,c3));
 
 
-        Cliente cl1 = new Cliente(null, "Maria Silva", "jonathas.moraes@gsw.com.br","621461461", TipoCliente.PESSOAFISICA);
+        Cliente cl1 = new Cliente(null, "Maria Silva", "jonathas.moraes@gsw.com.br","621461461", TipoCliente.PESSOAFISICA,encoder.encode( "123456" ));
+        Cliente cl2 = new Cliente(null, "Ana C", "ana@g·com","621461461", TipoCliente.PESSOAFISICA,encoder.encode( "123456" ));
+        cl2.addPerfil( Perfil.ADMIN );
 
         Endereco end1 = new Endereco(null, "Rua Flores", "300", "apto 203", "Jardim", "297187178781", c1, cl1);
         Endereco end2 = new Endereco(null, "Avenida Matos", "105", "sala 800", "Centro", "917929127", c2, cl1);
@@ -106,8 +113,14 @@ public class DBService {
         Telefone t1 = new Telefone("12314424343");
         Telefone t2 = new Telefone("28982989289");
 
+        Telefone t3 = new Telefone("1238484414424343");
+        Telefone t4 = new Telefone("54428982989289");
+
         cl1.getTels().addAll(Arrays.asList(t1.getNumero(),t2.getNumero()));
         cl1.getEnderecos().addAll(Arrays.asList(end1,end2));
+
+        cl2.getTels().addAll( Arrays.asList( t3.getNumero(),t4.getNumero() ) );
+        cl2.getEnderecos().addAll(Arrays.asList(end1,end2));
 
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
@@ -141,7 +154,7 @@ public class DBService {
         estadoRepositories.saveAll(Arrays.asList(e1,e2));
         cidadeRepositories.saveAll(Arrays.asList(c1,c2,c3));
 
-        clienteRepositories.save(cl1);
+        clienteRepositories.saveAll(Arrays.asList(cl1,cl2));
         enderecoRepositories.saveAll(Arrays.asList(end1,end2));
 
         pedidoRepositories.saveAll(Arrays.asList(ped1, ped2));

@@ -1,5 +1,6 @@
 package br.com.gsw.springBootCurso.SpringBootCurso.domain;
 
+import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.Perfil;
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.TipoCliente;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 public class Cliente implements Serializable{
@@ -26,7 +28,16 @@ public class Cliente implements Serializable{
 	private String cpfOuCnpj;
 	private Integer tipoCliente;
 
-	@ElementCollection
+	@JsonIgnore
+	private String senha;
+
+
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "PERFIS")
+    private Set<Integer> perfis = new HashSet<>(  );
+
+    @ElementCollection
 	@CollectionTable(name="Telefone")
 	private Set<String> tels = new HashSet<>();
 	
@@ -37,14 +48,16 @@ public class Cliente implements Serializable{
 	@OneToMany(mappedBy="cliente")
 	private List<Pedido> pedidos = new ArrayList<>();
 	
-	public Cliente(Integer id, String nome, String email, String cpfOuCnpj, TipoCliente tipoCliente) {
+	public Cliente(Integer id, String nome, String email, String cpfOuCnpj, TipoCliente tipoCliente,String senha) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.cpfOuCnpj = cpfOuCnpj;
 		this.tipoCliente = tipoCliente.getCod();
-	}
+		this.senha = senha;
+        addPerfil( Perfil.CLIENTE );
+    }
 	
 	
 	public Integer getId() {
@@ -132,7 +145,8 @@ public class Cliente implements Serializable{
 
 
 	public Cliente() {
-		super();
+		addPerfil( Perfil.CLIENTE );
+
 	}
 
 
@@ -144,8 +158,23 @@ public class Cliente implements Serializable{
 	public void setPedidos(List<Pedido> pedidos) {
 		this.pedidos = pedidos;
 	}
-	
-	
-	
 
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+
+
+    public Set<Perfil> getPerfis() {
+        return perfis.stream().map( x -> Perfil.toEnum(x) ).collect( Collectors.toSet() );
+    }
+
+    public void addPerfil(Perfil perfil){
+	    this.perfis.add(perfil.getCod() );
+    }
 }

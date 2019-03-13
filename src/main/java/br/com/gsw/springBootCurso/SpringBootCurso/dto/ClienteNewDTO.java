@@ -26,6 +26,10 @@ public class ClienteNewDTO implements Serializable {
     private String email;
 
     @NotEmpty(message = "Preenchimento Obrigatorio")
+    @Length(min = 5,max = 10,message = "O nome deve conter entre 5 e 80 caracteres")
+    private String senha;
+
+    @NotEmpty(message = "Preenchimento Obrigatorio")
     private String cpfOuCnpj;
 
     @NotNull(message = "Preenchimento Obrigatorio")
@@ -164,4 +168,11 @@ public class ClienteNewDTO implements Serializable {
     }
 
 
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 }
