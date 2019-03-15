@@ -1,9 +1,8 @@
 package br.com.gsw.springBootCurso.SpringBootCurso.resource.exceptions;
 
-import java.util.Calendar;
-
-import javax.servlet.http.HttpServletRequest;
-
+import br.com.gsw.springBootCurso.SpringBootCurso.service.exceptions.AuthorizationException;
+import br.com.gsw.springBootCurso.SpringBootCurso.service.exceptions.DataIntegrityException;
+import br.com.gsw.springBootCurso.SpringBootCurso.service.exceptions.ObjectNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -11,8 +10,8 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import br.com.gsw.springBootCurso.SpringBootCurso.service.exceptions.DataIntegrityException;
-import br.com.gsw.springBootCurso.SpringBootCurso.service.exceptions.ObjectNotFoundException;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Calendar;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
@@ -42,5 +41,12 @@ public class ResourceExceptionHandler {
 		}
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
 		
+	}
+
+	@ExceptionHandler(AuthorizationException.class)
+	public ResponseEntity<StandardError> authorization(AuthorizationException e,HttpServletRequest request){
+		StandardError error = new StandardError(HttpStatus.UNAUTHORIZED.value(), e.getMessage(),Calendar.getInstance());
+		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
+
 	}
 }

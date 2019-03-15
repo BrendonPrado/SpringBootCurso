@@ -52,6 +52,8 @@ br/com/gsw/springBootCurso/SpringBootCurso/service/validation/ClienteUpdate.clas
 br/com/gsw/springBootCurso/SpringBootCurso/service/UserDetailsServiceImpl.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/EstadoRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/Pedido.class
+br/com/gsw/springBootCurso/SpringBootCurso/service/exceptions/AuthorizationException.class
+br/com/gsw/springBootCurso/SpringBootCurso/service/UserService.class
 br/com/gsw/springBootCurso/SpringBootCurso/dto/CredenciaisDTO.class
 br/com/gsw/springBootCurso/SpringBootCurso/security/JWTAuthenticationFilter$JWTAuthenticationFailureHandler.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/validation/ClienteInsertValidator.class

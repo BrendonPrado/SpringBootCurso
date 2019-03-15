@@ -2,9 +2,13 @@ package br.com.gsw.springBootCurso.SpringBootCurso.resource;
 
 
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.Cliente;
+import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.Perfil;
 import br.com.gsw.springBootCurso.SpringBootCurso.dto.ClienteDTO;
 import br.com.gsw.springBootCurso.SpringBootCurso.dto.ClienteNewDTO;
+import br.com.gsw.springBootCurso.SpringBootCurso.security.UserSS;
 import br.com.gsw.springBootCurso.SpringBootCurso.service.ClienteService;
+import br.com.gsw.springBootCurso.SpringBootCurso.service.UserService;
+import br.com.gsw.springBootCurso.SpringBootCurso.service.exceptions.AuthorizationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +32,10 @@ public class ClienteResource {
 	//Read
 	@RequestMapping(value="/{id}",method = RequestMethod.GET)
 	public ResponseEntity<Cliente> find(@PathVariable Integer id){
+		UserSS user = UserService.authenticated();
+		if (user==null || (!user.hasRole( Perfil.ADMIN) && !id.equals( user.getId() ))){
+			throw new AuthorizationException( "Acesso negado" );
+		}
 		Cliente cli = service.find(id);
 		return ResponseEntity.ok().body(cli);
 	}
