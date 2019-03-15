@@ -34,6 +34,7 @@ br/com/gsw/springBootCurso/SpringBootCurso/resource/ProdutoResource.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/ProdutoRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/repositories/CidadeRepositories.class
 br/com/gsw/springBootCurso/SpringBootCurso/dto/ClienteNewDTO.class
+br/com/gsw/springBootCurso/SpringBootCurso/resource/AuthResource.class
 br/com/gsw/springBootCurso/SpringBootCurso/security/UserSS.class
 br/com/gsw/springBootCurso/SpringBootCurso/service/SmtpEmailService.class
 br/com/gsw/springBootCurso/SpringBootCurso/domain/PagamentoComBoleto.class
