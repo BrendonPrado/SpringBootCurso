@@ -36,7 +36,7 @@ public class ProdutoResource {
 												   @RequestParam(value="direction",defaultValue="ASC")	String direction) throws UnsupportedEncodingException {
 		String nomeDecode = URL.decodeParam( nome );
 		List<Integer> lista = URL.decodeIntList(categoriaIds);
-		Page<ProdutoDTO> list = service.findPage( nome,  lista,page, linePerPage, orderBy, direction).map( p -> new ProdutoDTO(p) );
+		Page<ProdutoDTO> list = service.findPage( nomeDecode,  lista,page, linePerPage, orderBy, direction).map( p -> new ProdutoDTO(p) );
 		return ResponseEntity.ok().body(list);
 	}
 

@@ -1,12 +1,7 @@
 package br.com.gsw.springBootCurso.SpringBootCurso.resource.exceptions;
 
 import java.io.Serializable;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalTime;
 import java.util.Calendar;
-import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

@@ -38,9 +38,19 @@ public class ClienteService {
 		return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontado do id :"+id+", classe: "+Cliente.class));
 	}
 
+	public Cliente findByEmail(String email) throws ObjectNotFoundException {
+		try {
+			Cliente obj = repo.findByEmail( email );
+			return obj;
+		}catch (ObjectNotFoundException e){
+			throw new ObjectNotFoundException("Objeto não encontado do email :"+email+", classe: "+Cliente.class);
+		}
+	}
+
     @Transactional
     public Cliente insert(Cliente obj) {
         obj.setId(null);
+
         obj = repo.save(obj);
 		repoEnderecos.saveAll(obj.getEnderecos());
         return obj;

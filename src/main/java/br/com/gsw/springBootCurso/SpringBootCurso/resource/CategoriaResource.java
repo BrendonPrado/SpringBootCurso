@@ -2,25 +2,20 @@ package br.com.gsw.springBootCurso.SpringBootCurso.resource;
 
 
 
-import java.net.URI;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import javax.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.Categoria;
 import br.com.gsw.springBootCurso.SpringBootCurso.dto.CategoriaDTO;
 import br.com.gsw.springBootCurso.SpringBootCurso.service.CategoriaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import javax.validation.Valid;
+import java.net.URI;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/categorias")
@@ -37,6 +32,7 @@ public class CategoriaResource {
 		return ResponseEntity.ok().body(cat);
 	}
 	
+	@PreAuthorize("hasAnyRole('ADMIN')")
 	@RequestMapping(method = RequestMethod.POST )
 	public ResponseEntity<Void> insert(@RequestBody @Valid CategoriaDTO objDto){
 		Categoria obj = service.fromDto(objDto);
@@ -46,6 +42,7 @@ public class CategoriaResource {
 		return ResponseEntity.created(uri).build();
 	}
 	
+	@PreAuthorize("hasAnyRole('ADMIN')")
 	@RequestMapping(value="/{id}",method = RequestMethod.PUT )
 	public ResponseEntity<Void> update(@RequestBody CategoriaDTO obj, @PathVariable Integer id){
 		
@@ -54,6 +51,7 @@ public class CategoriaResource {
 		return ResponseEntity.noContent().build();
 	}
 	
+	@PreAuthorize("hasAnyRole('ADMIN')")
 	@RequestMapping(value="/{id}",method = RequestMethod.DELETE )
 	public ResponseEntity<Void> delete(@PathVariable Integer id){
 		

@@ -104,7 +104,7 @@ public class DBService {
 
 
         Cliente cl1 = new Cliente(null, "Maria Silva", "jonathas.moraes@gsw.com.br","621461461", TipoCliente.PESSOAFISICA,encoder.encode( "123456" ));
-        Cliente cl2 = new Cliente(null, "Ana C", "ana@g·com","621461461", TipoCliente.PESSOAFISICA,encoder.encode( "123456" ));
+        Cliente cl2 = new Cliente(null, "Ana C", "ana@g.com","621461461", TipoCliente.PESSOAFISICA,encoder.encode( "123456" ));
         cl2.addPerfil( Perfil.ADMIN );
 
         Endereco end1 = new Endereco(null, "Rua Flores", "300", "apto 203", "Jardim", "297187178781", c1, cl1);
