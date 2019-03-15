@@ -3,11 +3,13 @@ package br.com.gsw.springBootCurso.SpringBootCurso.resource;
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.Pedido;
 import br.com.gsw.springBootCurso.SpringBootCurso.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
 
 @RestController
@@ -33,4 +35,15 @@ public class PedidoResource {
 		return ResponseEntity.created(uri).build();
 	}
 
+	//read
+	@RequestMapping(method=RequestMethod.GET)
+	public ResponseEntity<Page<Pedido>> findPage(
+												   @RequestParam(value="page", defaultValue="0") Integer page,
+												   @RequestParam(value="linesPerPage",defaultValue="24")   Integer linePerPage
+			                                       ,@RequestParam(value="orderBy",defaultValue="instante")   String orderBy,
+												   @RequestParam(value="direction",defaultValue="DESC")	String direction) throws UnsupportedEncodingException {
+
+		Page<Pedido> list = service.findPage(page, linePerPage, orderBy, direction);
+		return ResponseEntity.ok().body(list);
+	}
 }

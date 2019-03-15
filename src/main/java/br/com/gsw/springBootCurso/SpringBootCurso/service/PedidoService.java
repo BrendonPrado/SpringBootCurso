@@ -5,12 +5,16 @@ import br.com.gsw.springBootCurso.SpringBootCurso.domain.ItemPedido;
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.PagamentoComBoleto;
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.Pedido;
 import br.com.gsw.springBootCurso.SpringBootCurso.domain.enums.EstadoPagamento;
-import br.com.gsw.springBootCurso.SpringBootCurso.repositories.ClienteRepositories;
 import br.com.gsw.springBootCurso.SpringBootCurso.repositories.ItemPedidoRepositories;
 import br.com.gsw.springBootCurso.SpringBootCurso.repositories.PagamentoRepositories;
 import br.com.gsw.springBootCurso.SpringBootCurso.repositories.PedidoRepositories;
+import br.com.gsw.springBootCurso.SpringBootCurso.security.UserSS;
+import br.com.gsw.springBootCurso.SpringBootCurso.service.exceptions.AuthorizationException;
 import br.com.gsw.springBootCurso.SpringBootCurso.service.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -33,7 +37,7 @@ public class PedidoService {
 	ItemPedidoRepositories itemPedidoRepositories;
 
 	@Autowired
-	ClienteRepositories clienteRepositories;
+	ClienteService clienteService;
 
 	@Autowired
 	EmailService emailService;
@@ -48,7 +52,7 @@ public class PedidoService {
     public Pedido insert(Pedido pedido) {
     	pedido.setId( null );
     	pedido.setInstante( new Date(  ) );
-    	pedido.setCliente( clienteRepositories.findById( pedido.getCliente().getId() ).orElse( null ) );
+    	pedido.setCliente( clienteService.find( pedido.getCliente().getId() ));
     	pedido.getPagamento().setEstadoPagamento( EstadoPagamento.PENDENTE );
     	pedido.getPagamento().setPedido( pedido );
     	if(pedido.getPagamento() instanceof PagamentoComBoleto){
@@ -70,4 +74,15 @@ public class PedidoService {
     	return pedido;
 
 	}
+
+	public Page<Pedido> findPage(Integer page,Integer linesPerPage,String orderBy,String direction){
+		UserSS user = UserService.authenticated();
+		if(user == null){
+			throw new AuthorizationException( "Acesso negado" );
+		}
+		PageRequest pageRequest =  PageRequest.of( page,linesPerPage, Sort.Direction.valueOf( direction ),orderBy );
+		Cliente cliente = clienteService.find( user.getId() );
+		return repo.findByCliente( cliente,pageRequest );
+	}
+
 }
